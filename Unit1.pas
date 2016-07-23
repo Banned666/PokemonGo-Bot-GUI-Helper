@@ -199,10 +199,10 @@ end;
 procedure TForm1.chk11Click(Sender: TObject);
 begin
      if chk11.Checked then
-    edt8.Enabled := True
+    cbb4.Enabled := True
   else
   begin
-    edt8.Enabled := False;
+    cbb4.Enabled := False;
   end;
 end;
 
