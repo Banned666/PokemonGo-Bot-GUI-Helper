@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'PokemonGo-Bot GUI Helper [0.3]'
+  Caption = 'PokemonGo-Bot GUI Helper [0.4]'
   ClientHeight = 250
   ClientWidth = 697
   Color = clBtnFace

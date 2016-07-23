@@ -127,13 +127,13 @@ begin
     cp := '';
   if Form1.chk6.Checked then
   begin
-    step := '--maxsteps ' + Form1.edt6.text + ' ';
+    step := '-ms ' + Form1.edt6.text + ' ';
   end
   else
     step := '';
   if Form1.chk7.Checked then
   begin
-    init := '--initial-transfer ';
+    init := '-it ';
   end
   else
     init := '';
@@ -158,12 +158,12 @@ begin
     if Form1.chk11.Checked then
   begin
    if Form1.cbb4.ItemIndex = 0 then
-      mode := '--distance_unit km '
+      mode := '-du km '
     else if Form1.cbb4.ItemIndex = 1 then
 
-      mode := '--distance_unit mi '
+      mode := '--du mi '
     else if Form1.cbb4.ItemIndex = 2 then
-      dist := '--distance_unit ft ';
+      dist := '--du ft ';
 
   end
   else
@@ -191,6 +191,7 @@ if not(edt2.text = '') then
 Assignfile(Batfile, ExtractFilePath(Application.ExeName)+'\'+edt2.Text+'.bat');
 Rewrite(Batfile);
 Writeln(Batfile,'@echo on');
+Writeln(Batfile,'@TITLE = ['+edt2.Text+']');
 Writeln(Batfile,memoupd);
 Closefile(Batfile);
   end;
