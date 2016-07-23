@@ -2,9 +2,9 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'PokemonGo-Bot GUI Helper [0.2]'
-  ClientHeight = 246
-  ClientWidth = 699
+  Caption = 'PokemonGo-Bot GUI Helper [0.3]'
+  ClientHeight = 250
+  ClientWidth = 697
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -30,7 +30,7 @@ object Form1: TForm1
   end
   object lbl3: TLabel
     Left = 24
-    Top = 198
+    Top = 212
     Width = 635
     Height = 13
     Caption = 
@@ -39,7 +39,7 @@ object Form1: TForm1
   end
   object lbl4: TLabel
     Left = 24
-    Top = 217
+    Top = 231
     Width = 355
     Height = 13
     Caption = 
@@ -48,7 +48,7 @@ object Form1: TForm1
   end
   object edt1: TEdit
     Left = 8
-    Top = 171
+    Top = 185
     Width = 683
     Height = 21
     Alignment = taCenter
@@ -199,16 +199,16 @@ object Form1: TForm1
     TabOrder = 14
   end
   object chk8: TCheckBox
-    Left = 296
-    Top = 87
+    Left = 111
+    Top = 93
     Width = 49
     Height = 17
     Caption = 'Debug'
     TabOrder = 15
   end
   object chk9: TCheckBox
-    Left = 176
-    Top = 87
+    Left = 8
+    Top = 93
     Width = 48
     Height = 17
     Caption = 'Test'
@@ -216,14 +216,14 @@ object Form1: TForm1
   end
   object edt7: TEdit
     Left = 296
-    Top = 113
+    Top = 127
     Width = 395
     Height = 21
     TabOrder = 17
   end
   object chk10: TCheckBox
     Left = 176
-    Top = 111
+    Top = 125
     Width = 97
     Height = 17
     Caption = 'Gmap key'
@@ -242,7 +242,7 @@ object Form1: TForm1
   end
   object btn1: TButton
     Left = 8
-    Top = 140
+    Top = 154
     Width = 265
     Height = 25
     Caption = 'Generate code'
@@ -251,7 +251,7 @@ object Form1: TForm1
   end
   object btn2: TButton
     Left = 296
-    Top = 140
+    Top = 154
     Width = 395
     Height = 25
     Caption = 'Generate bat'
@@ -267,12 +267,34 @@ object Form1: TForm1
     TabOrder = 22
     OnClick = chk11Click
   end
-  object edt8: TEdit
+  object cbb4: TComboBox
     Left = 570
     Top = 89
     Width = 121
     Height = 21
     Enabled = False
     TabOrder = 23
+    Text = 'SELECT MODE'
+    Items.Strings = (
+      'Kilometers'
+      'Miles'
+      'Feet')
+  end
+  object chk12: TCheckBox
+    Left = 176
+    Top = 91
+    Width = 114
+    Height = 17
+    Caption = 'Pokemon potential'
+    TabOrder = 24
+    OnClick = chk12Click
+  end
+  object edt8: TEdit
+    Left = 296
+    Top = 91
+    Width = 121
+    Height = 21
+    Enabled = False
+    TabOrder = 25
   end
 end

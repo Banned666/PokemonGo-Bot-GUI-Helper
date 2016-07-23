@@ -36,6 +36,8 @@ type
     lbl4: TLabel;
     btn2: TButton;
     chk11: TCheckBox;
+    cbb4: TComboBox;
+    chk12: TCheckBox;
     edt8: TEdit;
     procedure btn1Click(Sender: TObject);
     procedure chk1Click(Sender: TObject);
@@ -45,6 +47,7 @@ type
     procedure chk6Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure chk11Click(Sender: TObject);
+    procedure chk12Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,7 +64,7 @@ implementation
 function memoupd(): string;
 var
  filename, auth, login, password, mode, locstart, location, walkspeed, cp, step, init,
-    debug, test, gmap,dist: string;
+    debug, test, gmap,dist,iv: string;
 begin
   filename:='pokecli.py ';
   if not(Form1.cbb3.text = 'SELECT MODE') then
@@ -154,12 +157,23 @@ begin
     gmap := '';
     if Form1.chk11.Checked then
   begin
-    dist := '--distance_unit ' + Form1.edt8.text + ' ';
+   if Form1.cbb1.ItemIndex = 0 then
+      mode := '--distance_unit km '
+    else if Form1.cbb1.ItemIndex = 1 then
+
+      mode := '--distance_unit mi '
+    else if Form1.cbb1.ItemIndex = 2 then
+      dist := '--distance_unit ft ';
+
   end
   else
     dist := '';
+    if Form1.chk12.Checked then
+     begin
+       iv:= '-iv '+Form1.edt8.text+' ';
+     end else iv:='';
   Result :=filename +auth + login + password + mode + locstart + location + walkspeed +
-    cp + step + init + debug + test + gmap+dist;
+    cp + step + init + debug + test + gmap+dist+iv;
 
 end;
 
@@ -185,6 +199,16 @@ end;
 procedure TForm1.chk11Click(Sender: TObject);
 begin
      if chk11.Checked then
+    edt8.Enabled := True
+  else
+  begin
+    edt8.Enabled := False;
+  end;
+end;
+
+procedure TForm1.chk12Click(Sender: TObject);
+begin
+   if chk12.Checked then
     edt8.Enabled := True
   else
   begin
