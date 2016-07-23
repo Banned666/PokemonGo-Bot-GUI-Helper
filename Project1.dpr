@@ -11,7 +11,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.Title := 'PokemonGo-Bot GUI Helper [0.1]';
+  Application.Title := 'PokemonGo-Bot GUI Helper [0.2]';
   TStyleManager.TrySetStyle('Carbon');
   Application.CreateForm(TForm1, Form1);
   Application.Run;

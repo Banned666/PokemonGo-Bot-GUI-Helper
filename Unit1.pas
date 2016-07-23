@@ -34,12 +34,17 @@ type
     btn1: TButton;
     lbl3: TLabel;
     lbl4: TLabel;
+    btn2: TButton;
+    chk11: TCheckBox;
+    edt8: TEdit;
     procedure btn1Click(Sender: TObject);
     procedure chk1Click(Sender: TObject);
     procedure chk3Click(Sender: TObject);
     procedure chk4Click(Sender: TObject);
     procedure chk5Click(Sender: TObject);
     procedure chk6Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure chk11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,9 +60,10 @@ implementation
 
 function memoupd(): string;
 var
-  auth, login, password, mode, locstart, location, walkspeed, cp, step, init,
-    debug, test, gmap: string;
+ filename, auth, login, password, mode, locstart, location, walkspeed, cp, step, init,
+    debug, test, gmap,dist: string;
 begin
+  filename:='pokecli.py ';
   if not(Form1.cbb3.text = 'SELECT MODE') then
   begin
     if Form1.cbb3.ItemIndex = 0 then
@@ -142,18 +148,48 @@ begin
     test := '';
   if Form1.chk10.Checked then
   begin
-    gmap := '-k ' + Form1.edt7.text + ' ';
+    gmap := '-k "' + Form1.edt7.text + '" ';
   end
   else
     gmap := '';
-  Result := auth + login + password + mode + locstart + location + walkspeed +
-    cp + step + init + debug + test + gmap;
+    if Form1.chk11.Checked then
+  begin
+    dist := '--distance_unit ' + Form1.edt8.text + ' ';
+  end
+  else
+    dist := '';
+  Result :=filename +auth + login + password + mode + locstart + location + walkspeed +
+    cp + step + init + debug + test + gmap+dist;
 
 end;
 
 procedure TForm1.btn1Click(Sender: TObject);
 begin
-  Form1.edt1.text := memoupd;
+  Form1.edt1.text :=memoupd;
+end;
+
+procedure TForm1.btn2Click(Sender: TObject);
+var
+Batfile:textfile;
+begin
+if not(edt2.text = '') then
+  begin
+Assignfile(Batfile, ExtractFilePath(Application.ExeName)+'\'+edt2.Text+'.bat');
+Rewrite(Batfile);
+Writeln(Batfile,'@echo on');
+Writeln(Batfile,memoupd);
+Closefile(Batfile);
+  end;
+end;
+
+procedure TForm1.chk11Click(Sender: TObject);
+begin
+     if chk11.Checked then
+    edt8.Enabled := True
+  else
+  begin
+    edt8.Enabled := False;
+  end;
 end;
 
 procedure TForm1.chk1Click(Sender: TObject);

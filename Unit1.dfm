@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'PokemonGo-Bot GUI Helper [0.1]'
-  ClientHeight = 208
+  Caption = 'PokemonGo-Bot GUI Helper [0.2]'
+  ClientHeight = 246
   ClientWidth = 699
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -30,7 +30,7 @@ object Form1: TForm1
   end
   object lbl3: TLabel
     Left = 24
-    Top = 174
+    Top = 198
     Width = 635
     Height = 13
     Caption = 
@@ -39,7 +39,7 @@ object Form1: TForm1
   end
   object lbl4: TLabel
     Left = 24
-    Top = 193
+    Top = 217
     Width = 355
     Height = 13
     Caption = 
@@ -48,7 +48,7 @@ object Form1: TForm1
   end
   object edt1: TEdit
     Left = 8
-    Top = 147
+    Top = 171
     Width = 683
     Height = 21
     Alignment = taCenter
@@ -199,16 +199,16 @@ object Form1: TForm1
     TabOrder = 14
   end
   object chk8: TCheckBox
-    Left = 8
-    Top = 93
+    Left = 296
+    Top = 87
     Width = 49
     Height = 17
     Caption = 'Debug'
     TabOrder = 15
   end
   object chk9: TCheckBox
-    Left = 112
-    Top = 93
+    Left = 176
+    Top = 87
     Width = 48
     Height = 17
     Caption = 'Test'
@@ -216,14 +216,14 @@ object Form1: TForm1
   end
   object edt7: TEdit
     Left = 296
-    Top = 89
+    Top = 113
     Width = 395
     Height = 21
     TabOrder = 17
   end
   object chk10: TCheckBox
     Left = 176
-    Top = 87
+    Top = 111
     Width = 97
     Height = 17
     Caption = 'Gmap key'
@@ -242,11 +242,37 @@ object Form1: TForm1
   end
   object btn1: TButton
     Left = 8
-    Top = 116
-    Width = 683
+    Top = 140
+    Width = 265
     Height = 25
-    Caption = 'Generate'
+    Caption = 'Generate code'
     TabOrder = 20
     OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 296
+    Top = 140
+    Width = 395
+    Height = 25
+    Caption = 'Generate bat'
+    TabOrder = 21
+    OnClick = btn2Click
+  end
+  object chk11: TCheckBox
+    Left = 448
+    Top = 90
+    Width = 97
+    Height = 17
+    Caption = 'Distance Unit'
+    TabOrder = 22
+    OnClick = chk11Click
+  end
+  object edt8: TEdit
+    Left = 570
+    Top = 89
+    Width = 121
+    Height = 21
+    Enabled = False
+    TabOrder = 23
   end
 end
