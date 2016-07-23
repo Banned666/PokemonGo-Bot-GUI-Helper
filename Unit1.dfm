@@ -268,7 +268,7 @@ object Form1: TForm1
     OnClick = chk11Click
   end
   object cbb4: TComboBox
-    Left = 570
+    Left = 568
     Top = 89
     Width = 121
     Height = 21

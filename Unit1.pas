@@ -157,12 +157,12 @@ begin
     gmap := '';
     if Form1.chk11.Checked then
   begin
-   if Form1.cbb1.ItemIndex = 0 then
+   if Form1.cbb4.ItemIndex = 0 then
       mode := '--distance_unit km '
-    else if Form1.cbb1.ItemIndex = 1 then
+    else if Form1.cbb4.ItemIndex = 1 then
 
       mode := '--distance_unit mi '
-    else if Form1.cbb1.ItemIndex = 2 then
+    else if Form1.cbb4.ItemIndex = 2 then
       dist := '--distance_unit ft ';
 
   end
